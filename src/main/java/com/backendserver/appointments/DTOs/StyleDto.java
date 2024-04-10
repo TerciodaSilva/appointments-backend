@@ -1,18 +1,19 @@
-package com.backendserver.appointments.Models.xml;
+package com.backendserver.appointments.DTOs;
 
-import lombok.Data;
+import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ColorModel {
+public class StyleDto implements Serializable{
+
+  private static final long serialVersionUID = 1L;
 
   private String button;
   private String text;
   private String background;
-
 }

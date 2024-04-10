@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backendserver.appointments.DTOs.UserDTO;
+import com.backendserver.appointments.DTOs.UserDto;
 import com.backendserver.appointments.Models.user.User;
 import com.backendserver.appointments.services.UserService;
 
@@ -20,13 +20,13 @@ public class UserController {
   UserService userService;
   
   @PostMapping(value = "/register")
-  public ResponseEntity<User> registerUser(@RequestBody UserDTO userDto) {
+  public ResponseEntity<User> registerUser(@RequestBody UserDto userDto) {
     User user = userService.addUser(userDto);
     return ResponseEntity.ok().body(user);
   }
   
   @GetMapping
-  public ResponseEntity<User> selectUser(@RequestBody UserDTO userDto) {
+  public ResponseEntity<User> selectUser(@RequestBody UserDto userDto) {
     User user = userService.getUser(userDto);
     return ResponseEntity.ok().body(user);
   }
